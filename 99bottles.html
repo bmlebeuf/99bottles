@@ -11,6 +11,14 @@
           console.log(count + " " + word + " of beer,");
           console.log("Take one down, pass it around,");
           count = count - 1;
+          
+          // fixed bug for single vs. plural bottle(s) 
+          if (count !==1) {
+            word = "bottles";
+          } else {
+            word = word.substring(0, word.length - 1);
+          }
+          
           if (count > 0) {
             console.log(count + " " + word + " of beer on the wall.");
           } else {
